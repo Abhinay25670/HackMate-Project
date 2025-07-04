@@ -1,0 +1,127 @@
+{
+  "teams": [
+    {
+      "hackathonName": "HackMIT 2024",
+      "hackathonDate": "2024-09-14T09:00:00.000Z",
+      "location": "Cambridge, MA",
+      "techStack": ["React", "Node.js", "MongoDB", "OpenAI"],
+      "teamSize": 4,
+      "currentMembers": 2,
+      "description": "We're building an AI-powered study assistant that helps students organize their learning materials and create personalized study plans. Looking for a backend developer and a UI/UX designer to complete our team!",
+      "creatorId": "demo-user-1",
+      "creatorName": "Alex Chen",
+      "creatorEmail": "alex.chen@example.com",
+      "isActive": true,
+      "createdAt": "2024-01-15T10:30:00.000Z",
+      "updatedAt": "2024-01-15T10:30:00.000Z"
+    },
+    {
+      "hackathonName": "Global Sustainability Hack",
+      "hackathonDate": "2024-10-05T08:00:00.000Z",
+      "location": "Online",
+      "techStack": ["Python", "TensorFlow", "React Native", "Firebase"],
+      "teamSize": 5,
+      "currentMembers": 3,
+      "description": "Climate change tracker app using satellite data and machine learning to predict environmental changes. We need a mobile developer and a data scientist passionate about saving the planet!",
+      "creatorId": "demo-user-2",
+      "creatorName": "Maria Rodriguez",
+      "creatorEmail": "maria.r@example.com",
+      "isActive": true,
+      "createdAt": "2024-01-14T14:20:00.000Z",
+      "updatedAt": "2024-01-14T14:20:00.000Z"
+    },
+    {
+      "hackathonName": "FinTech Revolution 2024",
+      "hackathonDate": "2024-08-22T10:00:00.000Z",
+      "location": "San Francisco, CA",
+      "techStack": ["Vue.js", "Express.js", "PostgreSQL", "Blockchain"],
+      "teamSize": 3,
+      "currentMembers": 1,
+      "description": "Building a decentralized micro-lending platform for small businesses. Looking for experienced blockchain developers and someone with financial modeling expertise.",
+      "creatorId": "demo-user-3",
+      "creatorName": "David Kim",
+      "creatorEmail": "david.kim@example.com",
+      "isActive": true,
+      "createdAt": "2024-01-13T09:15:00.000Z",
+      "updatedAt": "2024-01-13T09:15:00.000Z"
+    },
+    {
+      "hackathonName": "Healthcare Innovation Hack",
+      "hackathonDate": "2024-11-16T09:00:00.000Z",
+      "location": "Online",
+      "techStack": ["React", "FastAPI", "PostgreSQL", "Docker"],
+      "teamSize": 4,
+      "currentMembers": 2,
+      "description": "Developing a telemedicine platform that connects patients with specialists in rural areas. We're looking for a backend developer familiar with HIPAA compliance and a UX designer.",
+      "creatorId": "demo-user-4",
+      "creatorName": "Sarah Johnson",
+      "creatorEmail": "sarah.j@example.com",
+      "isActive": true,
+      "createdAt": "2024-01-12T16:45:00.000Z",
+      "updatedAt": "2024-01-12T16:45:00.000Z"
+    },
+    {
+      "hackathonName": "EdTech Challenge 2024",
+      "hackathonDate": "2024-09-28T11:00:00.000Z",
+      "location": "Austin, TX",
+      "techStack": ["Angular", "Django", "Redis", "WebRTC"],
+      "teamSize": 6,
+      "currentMembers": 4,
+      "description": "Virtual classroom platform with real-time collaboration tools and gamification elements. Need a DevOps engineer and a game developer to join our awesome team!",
+      "creatorId": "demo-user-5",
+      "creatorName": "Michael Brown",
+      "creatorEmail": "michael.b@example.com",
+      "isActive": true,
+      "createdAt": "2024-01-11T11:30:00.000Z",
+      "updatedAt": "2024-01-11T11:30:00.000Z"
+    },
+    {
+      "hackathonName": "Smart City Hackathon",
+      "hackathonDate": "2024-10-12T08:30:00.000Z",
+      "location": "New York, NY",
+      "techStack": ["React Native", "Node.js", "IoT", "AWS"],
+      "teamSize": 4,
+      "currentMembers": 3,
+      "description": "IoT-based smart parking system that helps drivers find available spots in real-time. Looking for an IoT specialist who can work with sensors and data analytics.",
+      "creatorId": "demo-user-6",
+      "creatorName": "Emily Davis",
+      "creatorEmail": "emily.d@example.com",
+      "isActive": true,
+      "createdAt": "2024-01-10T13:20:00.000Z",
+      "updatedAt": "2024-01-10T13:20:00.000Z"
+    }
+  ],
+  "users": [
+    {
+      "email": "alex.chen@example.com",
+      "displayName": "Alex Chen",
+      "skills": ["React", "Node.js", "MongoDB", "Machine Learning"],
+      "bio": "Full-stack developer with 3 years of experience. Passionate about AI and education technology.",
+      "githubUsername": "alexchen",
+      "linkedinUrl": "https://linkedin.com/in/alexchen",
+      "createdAt": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "email": "maria.r@example.com",
+      "displayName": "Maria Rodriguez",
+      "skills": ["Python", "TensorFlow", "Data Science", "React"],
+      "bio": "Data scientist and environmental activist. Love working on projects that make a positive impact.",
+      "githubUsername": "mariarodriguez",
+      "linkedinUrl": "https://linkedin.com/in/maria-rodriguez",
+      "createdAt": "2024-01-02T00:00:00.000Z"
+    },
+    {
+      "email": "david.kim@example.com",
+      "displayName": "David Kim",
+      "skills": ["Blockchain", "Solidity", "Vue.js", "Finance"],
+      "bio": "Blockchain developer and former investment banker. Building the future of decentralized finance.",
+      "githubUsername": "davidkim",
+      "linkedinUrl": "https://linkedin.com/in/david-kim-blockchain",
+      "createdAt": "2024-01-03T00:00:00.000Z"
+    }
+  ],
+  "firestore_rules": {
+    "description": "Copy these rules to your Firestore Security Rules tab",
+    "rules": "rules_version = '2';\nservice cloud.firestore {\n  match /databases/{database}/documents {\n    match /users/{userId} {\n      allow read, write: if request.auth != null && request.auth.uid == userId;\n    }\n    \n    match /teams/{teamId} {\n      allow read: if true;\n      allow create: if request.auth != null;\n      allow update, delete: if request.auth != null && request.auth.uid == resource.data.creatorId;\n    }\n    \n    match /applications/{applicationId} {\n      allow read: if request.auth != null && \n        (request.auth.uid == resource.data.applicantId || \n         request.auth.uid == get(/databases/$(database)/documents/teams/$(resource.data.teamId)).data.creatorId);\n      allow create: if request.auth != null;\n      allow update: if request.auth != null && \n        request.auth.uid == get(/databases/$(database)/documents/teams/$(resource.data.teamId)).data.creatorId;\n    }\n    \n    match /bookmarks/{bookmarkId} {\n      allow read, write: if request.auth != null && request.auth.uid == resource.data.userId;\n      allow create: if request.auth != null && request.auth.uid == request.resource.data.userId;\n    }\n  }\n}"
+  }
+}
